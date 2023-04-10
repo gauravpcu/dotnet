@@ -8,11 +8,7 @@ namespace spbenchmark.Controllers;
 [Route("api/[controller]")]
 public class UserController : ControllerBase
 {
-    private static readonly string[] Summaries = new[]
-    {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching", "Nice"
-    };
-
+   
     private readonly ILogger<UserController> _logger;
     private readonly UserDbContext _context;
     public UserController(UserDbContext context, ILogger<UserController> logger)

@@ -9,11 +9,15 @@ namespace spbenchmark.data
         public DbSet<CoreUser> CoreUsers { get; set; }
         public UserDbContext()
 		{
-		}
+        
+        }
+        public UserDbContext(DbContextOptions<UserDbContext> options)
+            : base(options)
+        {
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL("server=localhost;database=sp_test;user=root;password=Procurement!2023");
             base.OnConfiguring(optionsBuilder);
         }
 
